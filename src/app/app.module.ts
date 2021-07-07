@@ -45,6 +45,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { RegisterComponent } from './components/register/register.component';
 import { RegisterdoctorComponent } from './components/registerdoctor/registerdoctor.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -55,6 +56,7 @@ import { RegisterdoctorComponent } from './components/registerdoctor/registerdoc
     FooterComponent,
     RegisterComponent,
     RegisterdoctorComponent,
+    LoginComponent,
     // FruitbannerboxComponent,
   ],
   imports: [
