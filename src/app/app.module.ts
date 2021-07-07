@@ -44,6 +44,7 @@ import { Component, Inject} from '@angular/core';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { RegisterComponent } from './components/register/register.component';
+import { RegisterdoctorComponent } from './components/registerdoctor/registerdoctor.component';
 
 
 @NgModule({
@@ -53,6 +54,7 @@ import { RegisterComponent } from './components/register/register.component';
     HeaderComponent,
     FooterComponent,
     RegisterComponent,
+    RegisterdoctorComponent,
     // FruitbannerboxComponent,
   ],
   imports: [
