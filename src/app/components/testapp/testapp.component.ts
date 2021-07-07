@@ -16,6 +16,36 @@ export class TestappComponent implements OnInit {
    public _uw:UserWService,
   private dataApi: DataApiService
      ) { }
+   loadAPI = null;  
+
+  url = "assets/assetsdental/js/slick.js";
+  url2 = "assets/assetsdental/plugins/swiper/js/swiper.min.js";
+  url3 = "assets/assetsdental/plugins/swiper/js/swiper.min.js";
+
+ public loadScript() {
+    let node = document.createElement("script");
+    node.src = this.url;
+    node.type = "text/javascript";
+    node.async = true;
+    node.charset = "utf-8";
+    document.getElementsByTagName("head")[0].appendChild(node);
+  }
+  public loadScript2() {
+    let node = document.createElement("script");
+    node.src = this.url2;
+    node.type = "text/javascript";
+    node.async = true;
+    node.charset = "utf-8";
+    document.getElementsByTagName("head")[0].appendChild(node);
+  } 
+   public loadScript3() {
+    let node = document.createElement("script");
+    node.src = this.url3;
+    node.type = "text/javascript";
+    node.async = true;
+    node.charset = "utf-8";
+    document.getElementsByTagName("head")[0].appendChild(node);
+  }
      public tixs:TixInterface;
   getAllTixsInitload(){
     this.dataApi
@@ -114,7 +144,15 @@ cartCalculate(){
      this.getTamanoIni();
      this.loadmore();
      this._uw.categorySelected="hortalizas";
-
+ if (this._uw.loaded==true){
+      this.loadAPI = new Promise(resolve => {
+        this.loadScript();
+        this.loadScript2();
+        this.loadScript3();
+        // this.loadScript3();
+        });
+      }
+    this._uw.loaded=true;
   }
 
 
