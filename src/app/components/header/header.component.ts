@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { UserWService } from "../../services/user-w.service";
 import { DataApiService } from '../../services/data-api.service';
 //import { ScrollTopService }  from '../../services/scroll-top.service';
+import { Location } from '@angular/common';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -12,7 +15,9 @@ export class HeaderComponent implements OnInit {
   constructor(
  // public scrollTopService:ScrollTopService,
    public _uw:UserWService,
-  private dataApi: DataApiService
+  private dataApi: DataApiService,
+    public router: Router,
+    private location: Location
     ) { }
    loadAPI = null;  
 
