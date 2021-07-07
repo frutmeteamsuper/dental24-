@@ -134,8 +134,9 @@
         </div>
         <ul class="nav header-navbar-rht right-menu">
             <li class="nav-item">
-            <a class="nav-link header-login white-bg"  [hidden]="!router.url.includes('/register') && !router.url.includes('/registerdoctor')">login </a>
-            <a class="nav-link header-login white-bg" routerLink="/register"  [hidden]="router.url.includes('/register') || router.url.includes('/registerdoctor')">login / Signup</a>
+            <a class="nav-link header-login white-bg" routerLink="/login" [hidden]="!router.url.includes('/register') && !router.url.includes('/registerdoctor')">login </a>
+          <!--   <a class="nav-link header-login white-bg" routerLink="/register"  [hidden]="router.url.includes('/register') || router.url.includes('/registerdoctor')  || router.url.includes('/login')"  >login / Signup</a> -->
+            <a class="nav-link header-login white-bg" routerLink="/register"  [hidden]="router.url.includes('/register') || router.url.includes('/registerdoctor')  "  >Signup</a>
             </li>
         </ul>
     </nav>
