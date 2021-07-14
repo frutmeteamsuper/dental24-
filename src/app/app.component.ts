@@ -38,7 +38,6 @@ export class AppComponent implements OnInit {
 
   	 if (this._uw.loaded==true){
           this.loadAPI = new Promise(resolve => {
-            this.loadScript();
           });
         }
         this._uw.loaded=true;
