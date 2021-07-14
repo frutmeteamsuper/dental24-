@@ -12,6 +12,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 //SERVICES
 import {TixsService} from './services/tixs.service';
+
 import {ProductInfoService} from './services/product-info.service';
 import {CarService} from './services/car.service';
 import {DataApiService} from './services/data-api.service';
@@ -46,6 +47,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { RegisterComponent } from './components/register/register.component';
 import { RegisterdoctorComponent } from './components/registerdoctor/registerdoctor.component';
 import { LoginComponent } from './components/login/login.component';
+import { RegisterformComponent } from './components/registerform/registerform.component';
 
 
 @NgModule({
@@ -57,6 +59,7 @@ import { LoginComponent } from './components/login/login.component';
     RegisterComponent,
     RegisterdoctorComponent,
     LoginComponent,
+    RegisterformComponent,
     // FruitbannerboxComponent,
   ],
   imports: [
@@ -90,6 +93,7 @@ import { LoginComponent } from './components/login/login.component';
   entryComponents:[ ],
   providers: [
     TixsService,
+
     DataApiService,
     ScrollTopService,
     UserWService,

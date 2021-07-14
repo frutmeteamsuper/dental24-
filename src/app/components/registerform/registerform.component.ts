@@ -12,14 +12,15 @@ import { HttpClient } from  '@angular/common/http';
 import { isError } from "util";
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
-@Component({
-  selector: 'app-registerdoctor',
-  templateUrl: './registerdoctor.component.html',
-  styleUrls: ['./registerdoctor.component.css']
-})
-export class RegisterdoctorComponent implements OnInit {
 
-  constructor(
+@Component({
+  selector: 'app-registerform',
+  templateUrl: './registerform.component.html',
+  styleUrls: ['./registerform.component.css']
+})
+export class RegisterformComponent implements OnInit {
+
+   constructor(
     public scrollTopService:ScrollTopService,
     public _uw:UserWService,
     private dataApi: DataApiService,
@@ -34,15 +35,21 @@ export class RegisterdoctorComponent implements OnInit {
   url1 = "assets/assetsdental/js/popper.min.js";
   url2= "assets/assetsdental/js/slick.js";
   url3 = "assets/assetsdental/plugins/swiper/js/swiper.min.js";
-  url4 = "assets/assetsdental/js/script.js";
+  url4 = "assets/assetsdental/plugins/select2/js/select2.min.js";
+
+  url5 = "assets/assetsdental/js/moment.min.js";
+  url6 = "assets/assetsdental/js/bootstrap-datetimepicker.min.js";
+  url7 = "assets/assetsdental/js/script.js";
 
 
-  ngFormNewDentist: FormGroup;
+  ngFormNewDentistData: FormGroup;
   dentistSubmitted = false;
+    public images:any[]=[];
     public dentist : DentistInterface ={
     email:"",
     name:"",
-    password:""
+    password:"",
+    dentistIdPre:1
   };
 
 public loadScript() {
@@ -86,18 +93,42 @@ public loadScript() {
     node.charset = "utf-8";
     document.getElementsByTagName("head")[0].appendChild(node);
   }
+   public loadScript5() {
+    let node = document.createElement("script");
+    node.src = this.url5;
+    node.type = "text/javascript";
+    node.async = true;
+    node.charset = "utf-8";
+    document.getElementsByTagName("head")[0].appendChild(node);
+  }
+   public loadScript6() {
+    let node = document.createElement("script");
+    node.src = this.url6;
+    node.type = "text/javascript";
+    node.async = true;
+    node.charset = "utf-8";
+    document.getElementsByTagName("head")[0].appendChild(node);
+  }
+   public loadScript7() {
+    let node = document.createElement("script");
+    node.src = this.url7;
+    node.type = "text/javascript";
+    node.async = true;
+    node.charset = "utf-8";
+    document.getElementsByTagName("head")[0].appendChild(node);
+  }
  public aleatorio(a,b) {
     return Math.round(Math.random()*(b-a)+parseInt(a));
   }
   public ok(){
-      this.dentistSubmitted = true;
-        if (this.ngFormNewDentist.invalid) {
+      this.dentistSubmitted = true; 
+        if (this.ngFormNewDentistData.invalid) {
           this._uw.errorFormSendDentist=true;
         return;
             } 
   
           this._uw.dentistSubmitted=true;
-          this.dentist = this.ngFormNewDentist.value;
+          this.dentist = this.ngFormNewDentistData.value;
           this.dentist.status="new";
           this.dentist.dentistIdPre=this.aleatorio(10000,99999);
           let dentistIdString = this.dentist.dentistIdPre.toString();
@@ -135,11 +166,14 @@ public loadScript() {
         this.loadScript2();
         this.loadScript3();
         this.loadScript4();
+        this.loadScript5();
+        this.loadScript6();
+        this.loadScript7();
         // this.loadScript3();
         });
       }
     this._uw.loaded=true;
-        this.ngFormNewDentist = this.formBuilder.group({
+        this.ngFormNewDentistData = this.formBuilder.group({
       name: ['', [Validators.required]] ,
       email:['',[Validators.required]], 
       password:['',[Validators.required]]
@@ -148,6 +182,7 @@ public loadScript() {
 
 
   get fval2() {
-    return this.ngFormNewDentist.controls;
+    return this.ngFormNewDentistData.controls;
   }
+ 
 }

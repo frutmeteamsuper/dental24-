@@ -164,8 +164,8 @@ cartCalculate(){
 
   ngOnInit() {
      // this.getAllTixsInitload();
-     this.getTamanoIni();
-     this.loadmore();
+     // this.getTamanoIni();
+     // this.loadmore();
      this._uw.categorySelected="hortalizas";
  if (this._uw.loaded==true){
       this.loadAPI = new Promise(resolve => {

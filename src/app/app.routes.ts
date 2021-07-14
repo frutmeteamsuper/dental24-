@@ -4,6 +4,7 @@ import {
 	HeaderComponent,
 	FooterComponent,
 	RegisterComponent,
+	RegisterformComponent,
 	LoginComponent,
 	RegisterdoctorComponent
 	// FruitbannerboxComponent
@@ -17,6 +18,7 @@ const app_routes: Routes = [
 	{path:'header',component:HeaderComponent},
 	{path:'footer',component:FooterComponent},
 	{path:'register',component:RegisterComponent},
+	{path:'registerform',component:RegisterformComponent},
 	{path:'login',component:LoginComponent},
 	{path:'registerdoctor',component:RegisterdoctorComponent},
 	{path:'**',pathMatch:'full',redirectTo:''}

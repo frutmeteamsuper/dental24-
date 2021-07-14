@@ -21,16 +21,19 @@ export class UserWService {
 		comision:number=1;
 		paypal:boolean=false;
 		zelle:boolean=false;
-	categorySelected:string;
+	categorySelected:string;	
+	dentist:any={};
+	dentistSubmitted:boolean=false;
 	editingTrek:boolean=false;
 	errorFormAffiliate:boolean;
 	errorFormAddtixs:boolean;
 	errorFormPartner:boolean;
 	errorFormSendSale:boolean;
 	errorFormSendOrder:boolean;
+	errorFormSendDentist:boolean;
 	errorFormPago:boolean;
 	feet:number=0;
-	file:any[]=[];
+	file:any[]=[];st
 	filter:boolean=false;
 	foredit:any={};
 	globalCategory:boolean=true;
